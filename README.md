@@ -3,7 +3,9 @@ Integration Satellite RedHat in Grafana (Datasource Postgres)
 
 # 1 - Collect Pass Database Foreman Satellite
 grep "password" /etc/foreman/database.yml | awk '{print $2}' | tr -d '"'
+
 grep "jpa.config.hibernate.connection.password" /etc/candlepin/candlepin.conf | awk -F'=' '{print $2}'
+
 
 # 2 - Configure Extern Access in Postgres
 Edit the /var/lib/pgsql/data/postgresql.conf file:
